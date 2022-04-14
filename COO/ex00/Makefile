@@ -6,7 +6,7 @@
 #    By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/14 16:11:09 by rgelin            #+#    #+#              #
-#    Updated: 2022/04/14 16:15:23 by rgelin           ###   ########.fr        #
+#    Updated: 2022/04/14 16:19:21 by rgelin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,9 +41,8 @@ NO_COLOR	=	\x1b[0m
 		@printf "$(YELLOW)Generating cub3d objects... %-33.33s\r$(NO_COLOR)" $@
 		@$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME):	$(OBJS) $(OBJS_UTILS)
-			@echo "\n"
-			@echo "$(GREEN)\nCompiling megaphone...$(NO_COLOR)"
+$(NAME):	$(OBJS)
+			@echo "$(GREEN)Compiling megaphone...$(NO_COLOR)"
 			@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 			@echo "\nEnjoy!"
 
@@ -51,7 +50,7 @@ all:	$(NAME)
 
 clean:
 		@echo "$(RED)Deleting objects...\n$(NO_COLOR)"
-		@rm -f $(OBJS) $(OBJS_UTILS)
+		@rm -f $(NAME)
 
 fclean:	clean
 		@echo "$(RED)Deleting executables...\n$(NO_COLOR)"
