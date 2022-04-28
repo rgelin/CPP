@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:49:11 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/28 04:46:37 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/28 14:54:36 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,40 @@
 #include "../includes/PhoneBook.hpp"
 #include <stdlib.h>
 
-void	ft_add(PhoneBook *phonebook, int i)
+string	get_user_info(string message)
+{
+	string buf;
+	
+	cout << message;
+	getline(cin, buf);
+	if (cin.eof())
+		return (NULL);
+	else
+		return (buf);
+}
+
+int		ft_add(PhoneBook *phonebook, int i)
 {
 	string	f, l, sur, p, secret;
 
-	cout << "first name: ";
-	getline(cin, f);
-	// cin >> f;
-	if (cin.eof())
-		return ;
-	cout << endl << "last name: ";
-	cin >> l;
+	f = get_user_info("First name: ");
+	if (f.size() == 0)
+		return (1);
+	l = get_user_info("Last name: ");
 	if (l.size() == 0)
-		return ;
-	cout << endl << "surname: ";
-	cin >> sur;
+		return (1);
+	sur = get_user_info("Surname: ");
 	if (sur.size() == 0)
-		return ;
-	cout << endl << "phone number: ";
-	cin >> p;
+		return (1);
+	p = get_user_info("Phone number: ");
 	if (p.size() == 0)
-		return ;
-	cout << endl << "darkest secret: ";
-	cin >> secret;
-	if (secret.size() == 0)
-		return ;
-	// if (f.size() == 0 || l.size() == 0 || sur.size() == 0 || p.size() == 0 || secret.size() == 0) {
-	// 	cout << "incomplete profile, abort.." << endl;
-	// 	return ;
-	// }
-	phonebook[i].add_contact(0, f, l, sur, p, secret);
-	// phonebook[i].print_first_name(i);
-	// phonebook[i].print_last_name(i);
-	// phonebook[i].print_surname(i);
-	// phonebook[i].print_phone(i);
-	// phonebook[i].print_secret(i);
-	return ;
+		return (1);
+	secret = get_user_info("Darkest secret: ");
+	if (f.size() == 0)
+		return (1);
+	(*phonebook).add_contact(i, f, l, sur, p, secret);
+	cout << endl;
+	return (0);
 }
 
 void	ft_search(PhoneBook *phonebook)
@@ -58,23 +56,23 @@ void	ft_search(PhoneBook *phonebook)
 	int		i;
 	
 	cout << "which index?: ";
-	cin >> index;
+	getline(cin, index);
 	i = atoi(index.c_str());
 	phonebook[i].print_first_name(i);
 	phonebook[i].print_last_name(i);
 	phonebook[i].print_surname(i);
 	phonebook[i].print_phone(i);
 	phonebook[i].print_secret(i);
+	return ;
 		
 }
 
 int	main()
 {
 	string	buf;
-	int		i;
+	int		i = 0;
 	PhoneBook phonebook;
 	
-	i = 0;
 	while (!cin.eof())
 	{
 		cout << "Enter a command [ADD, SEARCH, EXIT]:\n> ";
@@ -82,10 +80,9 @@ int	main()
 		if (buf == "ADD") {
 			if (i >= 8)
 				i = 0;
-			else {
-				ft_add(&phonebook, i);
-				i += 1;	
-			}
+			if (ft_add(&phonebook, i))
+				cout << "Incomplete contact, abort..." << endl;
+			i += 1;
 		}
 		else if (buf == "SEARCH")
 			ft_search(&phonebook);
