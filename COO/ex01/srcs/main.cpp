@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:49:11 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/28 14:54:36 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/28 15:50:24 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,17 +52,39 @@ int		ft_add(PhoneBook *phonebook, int i)
 
 void	ft_search(PhoneBook *phonebook)
 {
-	string	index;
-	int		i;
-	
-	cout << "which index?: ";
-	getline(cin, index);
-	i = atoi(index.c_str());
-	phonebook[i].print_first_name(i);
-	phonebook[i].print_last_name(i);
-	phonebook[i].print_surname(i);
-	phonebook[i].print_phone(i);
-	phonebook[i].print_secret(i);
+	string	buf;
+	int		index;
+	string	first_name;
+	string	last_name;
+	string	surname;
+
+	cout << setw(10) << "Index" << "|" << setw(10) << "First Name" << "|" << setw(10) << "Last Name" << "|" << setw(10) << "Nickname" << endl;
+	for (int i = 0; i < 8; i++)
+	{
+		first_name = (*phonebook).get_first_name(i);
+		last_name = (*phonebook).get_last_name(i);
+		surname = (*phonebook).get_surname(i);
+		if (first_name.size() > 10) {
+			first_name.resize(9);
+			first_name.resize(10, '.');
+		}
+		if (last_name.size() > 10) {
+			last_name.resize(9);
+			last_name.resize(10, '.');
+		}
+		if (surname.size() > 10) {
+			surname.resize(9);
+			surname.resize(10, '.');
+		}
+		cout << setw(10) << (i + 1) << "|" << setw(10) << first_name << "|" << setw(10) << last_name << "|" << setw(10) << surname << endl;
+	}
+	buf = get_user_info("Which contact index are looking for: ");
+	index = atoi(buf.c_str());
+	// phonebook[i].print_first_name(i);
+	// phonebook[i].print_last_name(i);
+	// phonebook[i].print_surname(i);
+	// phonebook[i].print_phone(i);
+	// phonebook[i].print_secret(i);
 	return ;
 		
 }
