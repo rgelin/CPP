@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:59:28 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/20 20:53:28 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/21 14:49:16 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Contact::~Contact (void) {
 	
 }
 
-void Contact::create_contact(string f, string l, string sur, string p, string s)
+void Contact::set_contact_values(string f, string l, string sur, string p, string s)
 { 
 	this->_first_name = f;
 	this->_last_name = l;

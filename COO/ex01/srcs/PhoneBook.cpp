@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:07:53 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/20 21:43:58 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/21 14:51:21 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,26 @@ PhoneBook::~PhoneBook (void) {
 
 }
 
-void	PhoneBook::add (void)
-{
-	string	f, l, sur, p, secret;
-	Contact new_contact;
-
-	cout << "first name: ";
-	cin >> f;
-	cout << endl << "last name: ";
-	cin >> l;
-	cout << endl << "surname: ";
-	cin >> sur;
-	cout << endl << "phone number: ";
-	cin >> p;
-	cout << endl << "darkest secret: ";
-	cin >> secret;
-	if (f.size() == 0 || l.size() == 0 || sur.size() == 0 || p.size() == 0 || secret.size() == 0) {
-		cout << "not completed profile, abort.." << endl;
-		return ;
-	}
-	this->_phone_book[0] = new_contact.create_contact(f, l, sur, p, secret);
+void PhoneBook::add_contact (int i, string f,string l,string sur,string p,string secret) {
+	_phone_book[i].set_contact_values(f, l, sur, p, secret);
 }
+
+void	PhoneBook::print_first_name(int i) {
+	cout << "First name: " << _phone_book[i].get_first_name() << endl;
+}
+
+void	PhoneBook::print_last_name(int i) {
+	cout << "Last name: " << _phone_book[i].get_last_name() << endl;
+}
+
+void	PhoneBook::print_surname(int i) {
+	cout << "Surname: " << _phone_book[i].get_surname() << endl;
+}
+
+void	PhoneBook::print_phone(int i) {
+	cout << "Phone number: " << _phone_book[i].get_phone() << endl;
+}
+ 
+void	PhoneBook::print_secret(int i) {
+	cout << "Darkest secret: " << _phone_book[i].get_secret() << endl;
+} 
