@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:52:40 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/21 14:49:22 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:31:32 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ class Contact {
 		Contact();
 		~Contact();
 		void	set_contact_values(string _f, string _l, string _s, string _p, string _sec);
-		string	get_first_name(void);
-		string	get_last_name(void);
-		string	get_surname(void);
-		string	get_phone(void);
-		string	get_secret(void);
+		string	get_first_name(void) const;
+		string	get_last_name(void) const;
+		string	get_surname(void) const;
+		string	get_phone(void) const;
+		string	get_secret(void) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:07:53 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/29 02:59:00 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:30:53 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,27 @@ void PhoneBook::add_contact (int i, string f,string l,string sur,string p,string
 	_phone_book[i].set_contact_values(f, l, sur, p, secret);
 }
 
-string	PhoneBook::get_first_name(int i) {
+string	PhoneBook::get_first_name(int i) const {
 	return (_phone_book[i].get_first_name());
 }
 
-string	PhoneBook::get_last_name(int i) {
+string	PhoneBook::get_last_name(int i) const {
 	return (_phone_book[i].get_last_name());
 }
 
-string	PhoneBook::get_surname(int i) {
+string	PhoneBook::get_surname(int i) const {
 	return (_phone_book[i].get_surname());
 }
 
-string	PhoneBook::get_phone(int i) {
+string	PhoneBook::get_phone(int i) const {
 	return (_phone_book[i].get_phone());
 }
  
-string	PhoneBook::get_secret(int i) {
+string	PhoneBook::get_secret(int i) const {
 	return (_phone_book[i].get_secret());
 }
 
-void	PhoneBook::print_contact(int i) {
+void	PhoneBook::print_contact(int i) const {
 	cout << "First name: " << _phone_book[i].get_first_name() << endl;
 	cout << "Last name: " << _phone_book[i].get_last_name() << endl;
 	cout << "Surname: " << _phone_book[i].get_surname() << endl;

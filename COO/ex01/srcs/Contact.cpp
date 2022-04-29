@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 19:59:28 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/21 14:49:16 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:31:49 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,22 @@ void Contact::set_contact_values(string f, string l, string sur, string p, strin
 	this->_secret = s;
 }
 
-string Contact::get_first_name(void) {
+string Contact::get_first_name(void) const {
 	return (this->_first_name);
 }
 
-string Contact::get_last_name(void) {
+string Contact::get_last_name(void) const {
 	return (this->_last_name);
 }
 
-string Contact::get_surname(void) {
+string Contact::get_surname(void) const {
 	return (this->_surname);
 }
 
-string Contact::get_phone(void) {
+string Contact::get_phone(void) const {
 	return (this->_phone);
 }
 
-string Contact::get_secret(void) {
+string Contact::get_secret(void) const {
 	return (this->_secret);
 }
