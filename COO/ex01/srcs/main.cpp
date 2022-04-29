@@ -6,11 +6,10 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:49:11 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/29 03:18:46 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:25:09 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Contact.hpp"
 #include "../includes/PhoneBook.hpp"
 #include <stdlib.h>
 
@@ -84,9 +83,9 @@ void	ft_search(PhoneBook *phonebook)
 	buf = get_user_info("Enter a contact index: ");
 	index = atoi(buf.c_str());
 	if (index <= 0 || index > 8 )
-		cout << "\ninvalid index..\n" << endl;
+		cout << "\nInvalid index..\n" << endl;
 	else
-		(*phonebook).print_contact(index);
+		(*phonebook).print_contact(index - 1);
 	return ;
 		
 }
