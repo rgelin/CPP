@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:49:11 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/29 13:25:09 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:27:04 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main()
 	int		i = 0;
 	PhoneBook phonebook;
 	
-	while (!cin.eof())
+	while (1)
 	{
 		cout << "Enter a command [ADD, SEARCH, EXIT]:\n> ";
 		getline(cin, buf);
