@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:49:11 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/29 13:34:26 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:35:20 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,4 +114,5 @@ int	main()
 		else
 				cout << "\nOnly ADD/ SEARCH/ EXIT command accepted!\n" << endl;
 	}
+	return (0);
 }
