@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:05:47 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/28 15:19:21 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 02:57:49 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ class PhoneBook
 		string	get_surname(int i);
 		string	get_phone(int i);
 		string	get_secret(int i);
+		void	print_contact(int i);
 };
 
 #endif
