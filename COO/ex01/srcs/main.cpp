@@ -6,14 +6,14 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 20:49:11 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/29 13:27:04 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/04/29 13:34:26 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/PhoneBook.hpp"
 #include <stdlib.h>
 
-string	get_user_info(string message)
+static string	get_user_info(string message)
 {
 	string buf;
 	
@@ -25,7 +25,7 @@ string	get_user_info(string message)
 		return (buf);
 }
 
-int		ft_add(PhoneBook *phonebook, int i)
+static int		ft_add(PhoneBook *phonebook, int i)
 {
 	string	f, l, sur, p, secret;
 
@@ -49,7 +49,7 @@ int		ft_add(PhoneBook *phonebook, int i)
 	return (0);
 }
 
-void check_size(string *first_name, string *last_name, string *surname)
+static void check_size(string *first_name, string *last_name, string *surname)
 {
 	if ((*first_name).size() > 10) {
 		(*first_name).resize(9);
@@ -65,7 +65,7 @@ void check_size(string *first_name, string *last_name, string *surname)
 	}
 }
 
-void	ft_search(PhoneBook *phonebook)
+static void	ft_search(PhoneBook *phonebook)
 {
 	string	buf, first_name, last_name, surname;
 	int		index;
