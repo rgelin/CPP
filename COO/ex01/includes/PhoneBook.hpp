@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 15:05:47 by rgelin            #+#    #+#             */
-/*   Updated: 2022/04/29 13:29:25 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/02 14:03:09 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 #include <iomanip>
 #include "Contact.hpp"
 
-using namespace std;
-
 class PhoneBook
 {
 	private:
@@ -28,12 +26,12 @@ class PhoneBook
 	public:
 		PhoneBook();
 		~PhoneBook();
-		void	add_contact(int i, string f, string l, string sur, string p, string secret);
-		string	get_first_name(int i) const;
-		string	get_last_name(int i) const;
-		string	get_surname(int i) const;
-		string	get_phone(int i) const;
-		string	get_secret(int i) const;
+		void	add_contact(int i, std::string f, std::string l, std::string sur, std::string p, std::string secret);
+		std::string	get_first_name(int i) const;
+		std::string	get_last_name(int i) const;
+		std::string	get_surname(int i) const;
+		std::string	get_phone(int i) const;
+		std::string	get_secret(int i) const;
 		void	print_contact(int i) const;
 };
 

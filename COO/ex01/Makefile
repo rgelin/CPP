@@ -6,7 +6,7 @@
 #    By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/19 19:02:19 by rgelin            #+#    #+#              #
-#    Updated: 2022/04/20 20:53:10 by rgelin           ###   ########.fr        #
+#    Updated: 2022/05/02 14:05:58 by rgelin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME		=	phonebook
 #-------------------COMPILATION----------------------
 
 CC			=	g++
-FLAGS		=	-Wall -Werror -Wextra
+FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 #-------------------SOURCES FILES----------------------
 
