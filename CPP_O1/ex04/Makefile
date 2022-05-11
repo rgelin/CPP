@@ -6,7 +6,7 @@
 #    By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 13:51:59 by rgelin            #+#    #+#              #
-#    Updated: 2022/05/04 15:12:42 by rgelin           ###   ########.fr        #
+#    Updated: 2022/05/11 16:53:01 by rgelin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,11 @@ FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 #-------------------SOURCES FILES----------------------
 
-SRCS		=	main.cpp \
+SRCS		=	main.cpp
 
 #-------------------OBJECTS----------------------
 
-OBJS		=	$(SRCS:.c=.o)
+OBJS		=	$(SRCS:.cpp=.o)
 
 #-------------------COLORS----------------------
 
@@ -37,11 +37,12 @@ NO_COLOR	=	\x1b[0m
 
 
 #-------------------RULES-----------------------
-%.o: %.c
-		@printf "$(YELLOW)Generating cub3d objects... %-33.33s\r$(NO_COLOR)" $@
+%.o: %.cpp
+		@printf "$(YELLOW)Generating filestream objects... %-33.33s\r$(NO_COLOR)" $@
 		@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
+			@echo "\n"
 			@echo "$(GREEN)Compiling filestream...$(NO_COLOR)"
 			@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 			@echo "\nEnjoy!"
@@ -50,7 +51,7 @@ all:	$(NAME)
 
 clean:
 		@echo "$(RED)Deleting objects...\n$(NO_COLOR)"
-		@rm -f $(NAME)
+		@rm -f $(OBJS)
 
 fclean:	clean
 		@echo "$(RED)Deleting executables...\n$(NO_COLOR)"
