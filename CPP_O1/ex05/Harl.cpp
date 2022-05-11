@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:10:38 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/11 16:20:57 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/11 16:25:10 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	Harl::error(void) {
 //https://www.youtube.com/watch?v=p4sDgQ-jao4
 
 void	Harl::complain(std::string level) {
-	void	(Harl::*fct[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	void	(Harl::*fct[4])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string	message[4] = {"debug", "info", "warning", "error"};
 
 	for (int i = 0; i < 4; i++) {
