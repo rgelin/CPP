@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/03 13:51:59 by rgelin            #+#    #+#              #
-#    Updated: 2022/05/11 16:58:00 by rgelin           ###   ########.fr        #
+#    Created: 2022/05/12 14:32:17 by rgelin            #+#    #+#              #
+#    Updated: 2022/05/13 01:07:12 by rgelin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	string
+NAME		=	claptrap
 
 #-------------------COMPILATION----------------------
 
@@ -19,7 +19,12 @@ FLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 #-------------------SOURCES FILES----------------------
 
-SRCS		=	main.cpp
+SRC			=	./src/
+SRCS		=	$(SRC)main.cpp \
+				$(SRC)ClapTrap.cpp \
+				$(SRC)ScavTrap.cpp \
+				$(SRC)FragTrap.cpp
+				
 
 #-------------------OBJECTS----------------------
 
@@ -38,12 +43,12 @@ NO_COLOR	=	\x1b[0m
 
 #-------------------RULES-----------------------
 %.o: %.cpp
-		@printf "$(YELLOW)Generating string objects... %-33.33s\r$(NO_COLOR)" $@
+		@printf "$(YELLOW)Generating claptrap objects... %-33.33s\r$(NO_COLOR)" $@
 		@$(CC) $(FLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			@echo "\n"
-			@echo "$(GREEN)Compiling string...$(NO_COLOR)"
+			@echo "$(GREEN)Compiling claptrap...$(NO_COLOR)"
 			@$(CC) $(FLAGS) $(OBJS) -o $(NAME)
 			@echo "\nEnjoy!"
 
