@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:48:40 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/16 16:09:18 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:47:47 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Dog::~Dog() {
 }
 
 Dog & Dog::operator=(Dog const &src) {
-	std::cout << "Dog assignation called." << std::endl;
 	if (this != &src) {
 		(this->_type) = src.getType();
 	}

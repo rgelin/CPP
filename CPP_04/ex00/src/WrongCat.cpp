@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:29:38 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/16 16:43:57 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:48:03 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ WrongCat::~WrongCat() {
 }
 
 WrongCat & WrongCat::operator=(WrongCat const &src) {
-	std::cout << "WrongCat assignation called." << std::endl;
 	if (this != &src) {
 		(this->_type) = src.getType();
 	}

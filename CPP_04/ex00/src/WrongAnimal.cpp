@@ -6,14 +6,14 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 16:25:38 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/16 16:39:23 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:48:53 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal() : _type("Default") {
-	std::cout << "WrongAnimal default constructor called." << std::endl;
+	std::cout << "WrongAnimal constructor called." << std::endl;
 }
 
 WrongAnimal::WrongAnimal(std::string type) : _type(type) {
@@ -30,7 +30,6 @@ WrongAnimal::~WrongAnimal() {
 }
 
 WrongAnimal & WrongAnimal::operator=(WrongAnimal const &src) {
-	std::cout << "WrongAnimal assignation called." << std::endl;
 	if (this != &src) {
 		(this->_type) = src.getType();
 	}

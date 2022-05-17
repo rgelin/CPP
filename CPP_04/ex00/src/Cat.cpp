@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:46:26 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/16 16:09:09 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:47:51 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Cat::~Cat() {
 }
 
 Cat & Cat::operator=(Cat const &src) {
-	std::cout << "Cat assignation called." << std::endl;
 	if (this != &src) {
 		(this->_type) = src.getType();
 	}

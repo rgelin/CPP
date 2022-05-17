@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:37:59 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/16 16:45:30 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/17 15:40:26 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,39 @@ int	main()
 		delete wrong_cat;
 		
 	}
+		std::cout << std::endl;
+		std::cout << std::endl;
+	{
+		
+		std::cout << "-------------More tests-------------" << std::endl;
+		Dog	alphonse;
+		std::cout << std::endl;
+		Cat	ninja;
+		
+		std::cout << std::endl;
+
+		// Dog	&alphonse_ref = alphonse;
+		// std::cout << std::endl;
+		// Cat	&ninja_ref = ninja;
+
+		std::cout << std::endl;
+		
+		Dog	alphonse_cpy(alphonse);
+		std::cout << std::endl;
+		Cat	ninja_cpy(ninja);
+		// const Animal 	*unkown = Dog(django);
+
+		std::cout << std::endl;
+		std::cout << std::endl;
+		(void)ninja;
+		(void)alphonse;
+		// (void)ninja_ref;
+		// (void)alphonse_ref;
+		(void)alphonse_cpy;
+		(void)ninja_cpy;
+	}
+		std::cout << std::endl;
+		std::cout << std::endl;
+	system("leaks ex00");
 	return (0);
 }
