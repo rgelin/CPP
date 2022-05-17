@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:37:59 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/17 18:02:30 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/17 18:16:07 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,31 @@ int	main()
 	std::cout << std::endl;
 	
 	std::cout << "-------------Adress comparasion-------------" << std::endl << std::endl;
+	std::cout << "Alphonse adress: " << &alphonse << std::endl;
 	std::cout << "Alphonse ref adress: " << &alphonse_ref << std::endl;
 	std::cout << "Alphonse copy adress: " << &alphonse_cpy << std::endl;
 	std::cout << std::endl;
-	std::cout << "ninja adress: " << &ninja << std::endl;
-	std::cout << "ninja ref adress: " << &ninja_ref << std::endl;
-	std::cout << "ninja copy adress: " << &ninja_cpy << std::endl;
+	std::cout << "Ninja adress: " << &ninja << std::endl;
+	std::cout << "Ninja ref adress: " << &ninja_ref << std::endl;
+	std::cout << "Ninja copy adress: " << &ninja_cpy << std::endl;
 	std::cout << std::endl;
+	
+	std::cout << "-------------Animal array-------------" << std::endl << std::endl;
+
+	const Animal	*(array[4]);
+	
+	for (int i = 0; i < 2; i++) {
+		array[i] = new Dog();
+		std::cout << std::endl;
+	}
+	for (int i = 2; i < 4; i++) {
+		array[i] = new Cat();
+		std::cout << std::endl;
+	}
+	for (int i = 0; i < 4; i++) {
+		delete array[i];
+		std::cout << std::endl;
+	}
 	
 	std::cout << "-------------Leaks-------------" << std::endl << std::endl;
 	
