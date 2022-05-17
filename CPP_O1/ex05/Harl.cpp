@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:10:38 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/04 16:30:49 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/10 14:07:00 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ void	Harl::error(void) {
 }
 
 void	Harl::complain(std::string level) {
+	Harl	bot;
 	
+
 }
