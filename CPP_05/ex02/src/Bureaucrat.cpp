@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 14:31:32 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/21 15:38:10 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:14:23 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ int				Bureaucrat::getGrade() const {
 void	Bureaucrat::signForm(Form &src) {
 	try {
 		src.beSigned(*this);
+		std::cout << "Bureaucrat " << this->_name << " signs \"" << src.getName() << "\"." << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << "Bureaucrat " << this->_name << " coudln't sign " << src.getName() << " form because: " << e.what() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:35:57 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/21 15:57:05 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:20:44 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &src
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {
-	std::cout << "PresidentialPardon_Form \"" + this->getName() + "\" destroyed." << std::endl;
+	std::cout << "PresidentialPardon_Form \"" + this->getName() + "\" is destroyed." << std::endl;
 }
 
 PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm const &src) {
@@ -51,6 +51,8 @@ void			PresidentialPardonForm::execute(Bureaucrat const &src) const {
 		throw (Form::NotSignedException());
 	else if (src.getGrade() > this->getXGrade())
 		throw (Form::ExecuteGradeTooLow());
-	else
+	else {
+		std::cout << "Bureaucrat " + src.getName() + " execute " + this->getName()+ "." << std::endl;
 		std::cout << "Zaphod Beeblebrox forvgive " + this->_target + "." << std::endl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:55:16 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/21 15:26:47 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:08:49 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ void	Form::beSigned(Bureaucrat const &src) {
 		throw(Form::SignGradeTooLow());
 	else {
 		this->_sign = true;
-		std::cout << "Bureaucrat " << src.getName() << " signs \"" << this->_name << "\"." << std::endl;
 	}
 }
 

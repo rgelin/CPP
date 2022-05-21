@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 14:52:51 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/21 16:01:34 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:20:51 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "Shrubbery_Form \"" + this->getName() + "\" destroyed." << std::endl;
+	std::cout << "Shrubbery_Form \"" + this->getName() + "\" is destroyed." << std::endl;
 }
 
 ShrubberyCreationForm	& ShrubberyCreationForm::operator=(ShrubberyCreationForm const &src) {
@@ -69,8 +69,8 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &src) const {
 		std::ofstream file(this->_target + "_shrubbery");
 		
 		if (file.is_open()) {
+			std::cout << "Bureaucrat " + src.getName() + " execute " + this->getName()+ "." << std::endl;	
 			file << tree;
-			std::cout << "Bureaucrat " + src.getName() + " execute " + this->getName() + "." << std::endl;;
 		}
 		else
 			std::cout << "Error: couldn't open file." << std::endl;;

@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:34:22 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/21 16:02:30 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:20:39 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &src) : Form(
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
-	std::cout << "Robotomy_Form \"" + this->getName() + "\" destroyed." << std::endl;
+	std::cout << "Robotomy_Form \"" + this->getName() + "\" is destroyed." << std::endl;
 }
 
 RobotomyRequestForm	& RobotomyRequestForm::operator=(RobotomyRequestForm const &src) {
@@ -58,10 +58,13 @@ void			RobotomyRequestForm::execute(Bureaucrat const &src) const {
 	else {
 		srand(time(NULL));
 		nbr = rand()%100;
-		std::cout << "Bzzzzzzzzzz... ";
-		if (nbr % 2 == 0)
-			std::cout << this->_target + " has been robotized!" << std::endl;
-		else
-			std::cout << "robotomisation on " + this->_target + " failed.." << std::endl;
+		if (nbr % 2 == 0) {
+			std::cout << "Bureaucrat " + src.getName() + " execute " + this->getName()+ "." << std::endl;
+			std::cout << "Bzzzzzzzzzz... " + this->_target + " has been robotized!" << std::endl;
+		}
+		else {
+			std::cout << "Bureaucrat " + src.getName() + " execute " + this->getName()+ "." << std::endl;
+			std::cout << "Bzzzzzzzzzz... robotisation on " + this->_target + " failed.." << std::endl;
+		}
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: rgelin <rgelin@student.s19.be>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 16:01:23 by rgelin            #+#    #+#             */
-/*   Updated: 2022/05/21 15:52:53 by rgelin           ###   ########.fr       */
+/*   Updated: 2022/05/21 16:10:54 by rgelin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int	main()
 {	
 	std::cout << "----Constructors----" << std::endl;
-	Bureaucrat		bob("bob", 150), fred("fred", 1), gg("GG", 1);
+	Bureaucrat		bob("bob", 150), fred("fred", 1);
 	std::cout << std::endl;
 	
 	ShrubberyCreationForm	shrub("jardin");
@@ -58,9 +58,12 @@ int	main()
 		
 		std::cout << "Fred: " << std::endl;
 		fred.executeForm(shrub);
-		gg.executeForm(robo);
+		std::cout << std::endl;
+		fred.executeForm(robo);
+		std::cout << std::endl;
 		usleep(1000000);
 		fred.executeForm(robo);
+		std::cout << std::endl;
 		fred.executeForm(presi);
 		std::cout << std::endl;
 		
